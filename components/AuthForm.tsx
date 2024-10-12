@@ -23,7 +23,7 @@ import { authFormSchema } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { getLoggedInUser, signIn, signUp } from '@/lib/actions/user.actions';
-//import PlaidLink from './PlaidLink';
+import PlaidLink from './PlaidLink';
 
 const AuthForm = ({ type }: { type: string }) => {
   const router = useRouter();
@@ -59,7 +59,7 @@ const AuthForm = ({ type }: { type: string }) => {
             state: data.state!,
             postalCode: data.postalCode!,
             dateOfBirth: data.dateOfBirth!,
-            dni: data.dni!,
+            ssn: data.ssn!,
             email: data.email,
             password: data.password
           }
@@ -117,7 +117,7 @@ const AuthForm = ({ type }: { type: string }) => {
         </header>
         {user ? (
             <div className="flex flex-col gap-4">
-            {/**<PlaidLink user={user} variant="primary" />*/}
+            {<PlaidLink user={user} variant="primary" />}
             </div>
         ): (
             <>
@@ -137,7 +137,7 @@ const AuthForm = ({ type }: { type: string }) => {
                     </div>
                     <div className="flex gap-4">
                         <CustomInput control={form.control} name='dateOfBirth' label="Date of Birth" placeholder='DD-MM-YYYY' />
-                        <CustomInput control={form.control} name='dni' label="DNI" placeholder='Example: 1234' />
+                        <CustomInput control={form.control} name='ssn' label="SSN" placeholder='Example: 1234' />
                     </div>
                     </>
                 )}
