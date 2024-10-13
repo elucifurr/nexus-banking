@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Footer from './Footer'
-//import PlaidLink from './PlaidLink'
+import PlaidLink from './PlaidLink'
 
 const Sidebar = ({ user }: SiderbarProps) => {
   const pathname = usePathname();
@@ -19,10 +19,10 @@ const Sidebar = ({ user }: SiderbarProps) => {
             src="/icons/logo.svg"
             width={34}
             height={34}
-            alt="Horizon logo"
+            alt="Nexus logo"
             className="size-[24px] max-xl:size-14"
           />
-          <h1 className="sidebar-logo">Horizon</h1>
+          <h1 className="sidebar-logo">Nexus</h1>
         </Link>
 
         {sidebarLinks.map((item) => {
@@ -49,7 +49,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
           )
         })}
         
-        {/*<PlaidLink user={user} />*/}
+        <PlaidLink user={user} />
       </nav>
 
       <Footer user={user} />
